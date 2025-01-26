@@ -30,8 +30,8 @@
 
 <div id="preloader">
    <div class="loader-container">
-      <img src="images/logo4.png" alt="Loading..." class="logo">
-      <div class="loading-text">Loading...</div>
+      <img src="logo7.png" alt="Loading..." class="logo">
+      
       <div class="matrix">
          <!-- You can add random code or numbers here to simulate a matrix effect -->
          <span class="matrix-line">1010101010</span>
@@ -41,11 +41,10 @@
    </div>
 </div>
 
-
 <nav>
     <div class="logo">
         <a href="#home">
-            <img src="images/logo3.png" alt="Logo" class="logo-img"> <!-- Add your logo image here -->
+            <img src="logo7.png" alt="Logo" class="logo-img"> <!-- Add your logo image here -->
         </a>
     </div>
     <div class="hamburger" onclick="toggleMenu()">
@@ -63,6 +62,94 @@
         <li><a href="#blog">Blog</a></li>
     </ul>
 </nav>
+
+<style>
+/* General Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff9800;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+</style>
+
+<script>
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+</script>
+
 
 
 
