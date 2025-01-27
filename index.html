@@ -396,7 +396,31 @@ function toggleMenu() {
         </div>
     </div>
 </footer>
-
+<script>
+(function (w, d, s, o, f, js, fjs) {
+        w[o] = w[o] || function () {
+            (w[o].q = w[o].q || []).push(arguments) };
+        js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+        js.id = o; js.src = f; js.async = 1;
+        fjs.parentNode.insertBefore(js, fjs) }
+    (window, document, 'script', 'nw', 'https://chat.norby.io/widget'));
+        nw('init', {
+            apiKey: '16714989-09b6-44b6-b1d6-d5bb87a00c0f',
+            serviceBaseUrl: 'https://api.norby.io',
+            lang: 'en',
+            languageList: ['AR','DA','DE','EE','EN','ES','FI','FR','IT','JA','NO','PL','PT','RU','SV','TR','UA','ZH'],
+            mainColor: '#3E247E',
+            popupBotAvatarColor: '#3E247E',
+            multichat: true,
+            botName: 'cyber-bot',
+            imageTransferEnabled: true,
+            side: 'right',
+            marginSideDesktop: 80,
+            marginBottomDesktop: 48,
+            marginSideMobile: 16,
+            marginBottomMobile: 16
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>
