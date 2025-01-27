@@ -355,6 +355,88 @@ function toggleMenu() {
             <p>Dive into the risks of weak passwords and the best practices for strong authentication.</p>
          </div>
       </section>
+<script>
+        (function (w, d, s, o, js, fjs) {
+            w[o] = w[o] || function () {
+                (w[o].q = w[o].q || []).push(arguments);
+            };
+            js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+            js.id = o;
+            js.src = 'https://chat.norby.io/widget';
+            js.async = 1;
+            fjs.parentNode.insertBefore(js, fjs);
+        })(
+            window,
+            document,
+            'script',
+            'nw'
+        );
+
+        nw('init', {
+            apiKey: '16714989-09b6-44b6-b1d6-d5bb87a00c0f',
+            serviceBaseUrl: 'https://api.norby.io',
+            lang: 'en',
+            languageList: ['EN', 'ES', 'FR', 'DE'],
+            mainColor: '#1A1A2E',
+            popupBotAvatarColor: '#0F3460',
+            botName: 'CyberSecure Bot',
+            multichat: true,
+            imageTransferEnabled: true,
+            side: 'right',
+            marginSideDesktop: 80,
+            marginBottomDesktop: 48,
+            marginSideMobile: 16,
+            marginBottomMobile: 16,
+            cybersecurityFeatures: {
+                enableIncidentReporting: true,
+                securityTips: [
+                    'Use strong passwords and change them regularly.',
+                    'Enable multi-factor authentication (MFA) on all accounts.',
+                    'Avoid clicking on suspicious links or attachments.',
+                    'Regularly back up important data securely.',
+                    'Keep your software and operating system updated.'
+                ],
+                faqs: [
+                    {
+                        question: 'How can I secure my website?',
+                        answer: 'Use HTTPS, regularly update your CMS and plugins, and implement firewalls.'
+                    },
+                    {
+                        question: 'What is phishing?',
+                        answer: 'Phishing is a type of social engineering attack where attackers deceive users to steal sensitive information.'
+                    },
+                    {
+                        question: 'How do I report a cybersecurity incident?',
+                        answer: 'Use our chatbot\'s incident reporting feature, or contact your IT team directly.'
+                    }
+                ]
+            }
+        });
+
+        // Handle Security Tips
+        nw('on', 'securityTipRequested', function () {
+            const tips = nw('getConfig').cybersecurityFeatures.securityTips;
+            const randomTip = tips[Math.floor(Math.random() * tips.length)];
+            nw('sendMessage', { text: randomTip });
+        });
+
+        // Handle FAQs
+        nw('on', 'faqRequested', function () {
+            const faqs = nw('getConfig').cybersecurityFeatures.faqs;
+            faqs.forEach(faq => {
+                nw('sendMessage', {
+                    text: `Q: ${faq.question} \nA: ${faq.answer}`
+                });
+            });
+        });
+
+        // Incident Reporting
+        nw('on', 'incidentReported', function (data) {
+            console.log('Incident reported:', data);
+            alert('Thank you for reporting the incident. We will review it promptly.');
+        });
+    </script>
+                    
 <footer class="footer">
     <div class="container">
         <!-- Social Media Links -->
@@ -396,31 +478,7 @@ function toggleMenu() {
         </div>
     </div>
 </footer>
-<script>
-(function (w, d, s, o, f, js, fjs) {
-        w[o] = w[o] || function () {
-            (w[o].q = w[o].q || []).push(arguments) };
-        js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-        js.id = o; js.src = f; js.async = 1;
-        fjs.parentNode.insertBefore(js, fjs) }
-    (window, document, 'script', 'nw', 'https://chat.norby.io/widget'));
-        nw('init', {
-            apiKey: '16714989-09b6-44b6-b1d6-d5bb87a00c0f',
-            serviceBaseUrl: 'https://api.norby.io',
-            lang: 'en',
-            languageList: ['AR','DA','DE','EE','EN','ES','FI','FR','IT','JA','NO','PL','PT','RU','SV','TR','UA','ZH'],
-            mainColor: '#3E247E',
-            popupBotAvatarColor: '#3E247E',
-            multichat: true,
-            botName: 'cyber-bot',
-            imageTransferEnabled: true,
-            side: 'right',
-            marginSideDesktop: 80,
-            marginBottomDesktop: 48,
-            marginSideMobile: 16,
-            marginBottomMobile: 16
-        });
-    </script>
+
 
     <script src="script.js"></script>
 </body>
