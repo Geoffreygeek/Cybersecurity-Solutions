@@ -1,7 +1,3 @@
-function toggleMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('active');
-    }
 
 window.addEventListener('load', function() {
    const preloader = document.getElementById('preloader');
